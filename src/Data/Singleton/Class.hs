@@ -5,6 +5,7 @@
 module Data.Singleton.Class where
 
 import Data.Functor.Identity (Identity (..))
+import Data.Functor.Compose  (Compose (..))
 
 
 
@@ -20,3 +21,7 @@ instance Extractable ((,,) w s) where
 
 instance Extractable Identity where
   runSingleton (Identity x) = x
+
+
+instance (Extractable f, Extractable g) => Extractable (Compose f g) where
+  runSingleton (Compose x) = runSingleton (runSingleton x)
