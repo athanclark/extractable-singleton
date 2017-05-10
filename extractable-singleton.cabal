@@ -1,6 +1,6 @@
 name:                extractable-singleton
 version:             0.0.0
--- synopsis:
+synopsis:            A functor, where the "stored" value is isomorphic to Identity
 -- description:
 homepage:            https://github.com/athanclark/extractable-singleton#readme
 license:             BSD3
